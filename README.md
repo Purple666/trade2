@@ -19,7 +19,7 @@ Python-MySQL・・・MySQL操作
 
 ※機械学習（参照・・・main2.py)
 
-１．PythoからMySQLのデータ操作方法
+１．PythoからMySQLのFXのローソク足
 
 ２．FXのローソク足を元にTA-LIB及び一目均衡表を元にした指標算出
 
