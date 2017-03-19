@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun May  8 16:26:05 2016
+
+@author: salem7mg
+"""
+
+import MySQLdb
+import time
+from daemon import DaemonContext
+from lockfile.pidlockfile import PIDLockFile
+from sklearn.externals import joblib
+class MySQLDB:
+  conn = None
+
+  def connect(self):
+    self.conn = MySQLdb.connect(host="salem7mg-on-ubuntu", db="fx", user="root", passwd="techpwd1862", charset="utf8")
+    return self.conn
+  def query(self, sql):
+    try:
+      cursor = self.conn.cursor()
+      cursor.execute(sql)
+    except (AttributeError, MySQLdb.OperationalError):
+      self.connect()
+      cursor = self.conn.cursor()
+      cursor.execute(sql)
+    return cursor
+  def close(self):
+    self.close
+    return 
